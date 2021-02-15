@@ -28,13 +28,13 @@ h2 {
 
 #colorbox {
   height: 22vh;
-  width: 80%;
+  width: 33vw;
   border-radius: 10px;
   margin-left: 2.5vw;
 }
 
 #outputcolor {
-  height: 47vh;
+  height: 45vh;
   width: 40%;
   background-color: lightgray;
 }

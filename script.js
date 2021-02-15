@@ -4,39 +4,46 @@ window.addEventListener("DOMContentLoader", init());
 
 function init() {
   //
+  const input = document.querySelector("input");
+  input.addEventListener("input", fetchHEX);
+  //
   console.log("Bonjour");
-  fetchHEX();
+  fetchHEX(input);
 }
 
 //fetch hex input
-function fetchHEX() {
-  let valueHEX = document.getElementById("picker").value;
-  displayHEX(valueHEX);
-  showColorBox(valueHEX);
+function fetchHEX(input) {
+  input = document.querySelector("input");
+  let valueHex = input.value;
+  // make the box the same
+  document.querySelector("#colorbox").style.backgroundColor = `${valueHex}`;
+
+  displayHEX(valueHex);
+  showColorBox(valueHex);
 }
 
 // display hex code for color
-function displayHEX(valueHEX) {
+function displayHEX(valueHex) {
   //
   console.log("Are you there");
   //
-  document.getElementById("hex").textContent = ` ${valueHEX}`;
-  console.log(valueHEX);
+  document.getElementById("hex").textContent = ` ${valueHex}`;
+  console.log(valueHex);
 }
 
 //change color of preview box
-function showColorBox(valueHEX) {
+function showColorBox(valueHex) {
   //
-  document.getElementById("colorbox").style.backgroundColor = valueHEX;
-  hex2RGB(valueHEX);
+  //document.getElementById("colorbox").style.backgroundColor = valueHEX;
+  hex2RGB(valueHex);
 }
 
 //display RGB code
-function hex2RGB(valueHEX) {
+function hex2RGB(valueHex) {
   //
-  let r = valueHEX.substring(1, 3);
-  let g = valueHEX.substring(3, 5);
-  let b = valueHEX.substring(5, 7);
+  let r = valueHex.substring(1, 3);
+  let g = valueHex.substring(3, 5);
+  let b = valueHex.substring(5, 7);
   r = parseInt(r, 16);
   g = parseInt(g, 16);
   b = parseInt(b, 16);
@@ -90,5 +97,7 @@ function getHSLvalue(r, g, b) {
 
 //display hsl code for color
 function displayHSL(h, s, l) {
-  document.querySelector("#hsl").textContent = ` ${h}%,  ${s}%,  ${l}%`;
+  document.querySelector("#hsl").textContent = ` ${h.toFixed(2)},  ${s.toFixed(
+    2
+  )}%,  ${l.toFixed(2)}%`;
 }
