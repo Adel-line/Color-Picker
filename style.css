@@ -3,7 +3,7 @@ label {
   display: flex;
   flex-direction: row;
   height: 60px;
-  width: 30%;
+  width: 40%;
   align-content: center;
 }
 
@@ -13,8 +13,8 @@ h1 {
   margin-left: 20px;
 }
 
-#picked {
-  height: 25px;
+#picker {
+  height: 28px;
   margin-top: 15px;
   margin-left: 25px;
 }
@@ -29,13 +29,18 @@ h2 {
 #colorbox {
   height: 22vh;
   width: 80%;
-  background-color: purple;
   border-radius: 10px;
   margin-left: 2.5vw;
 }
 
 #outputcolor {
-  height: 40vh;
-  width: 30%;
+  height: 47vh;
+  width: 40%;
   background-color: lightgray;
+}
+
+#text {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 25px;
+  margin-left: 25px;
 }
