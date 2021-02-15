@@ -8,33 +8,31 @@ function init() {
   input.addEventListener("input", fetchHEX);
   //
   console.log("Bonjour");
+  //
   fetchHEX(input);
 }
 
 //fetch hex input
 function fetchHEX(input) {
+  //
+  console.log("Are you there");
+  //
   input = document.querySelector("input");
   let valueHex = input.value;
-  // make the box the same
+  // make the box the same color as hoover
   document.querySelector("#colorbox").style.backgroundColor = `${valueHex}`;
 
   displayHEX(valueHex);
-  showColorBox(valueHex);
 }
 
 // display hex code for color
 function displayHEX(valueHex) {
   //
-  console.log("Are you there");
+  console.log("This is working");
   //
   document.getElementById("hex").textContent = ` ${valueHex}`;
   console.log(valueHex);
-}
-
-//change color of preview box
-function showColorBox(valueHex) {
   //
-  //document.getElementById("colorbox").style.backgroundColor = valueHEX;
   hex2RGB(valueHex);
 }
 
@@ -56,6 +54,7 @@ function hex2RGB(valueHex) {
 }
 
 //black box
+//display HSL Code
 function getHSLvalue(r, g, b) {
   r /= 255;
   g /= 255;
@@ -97,6 +96,8 @@ function getHSLvalue(r, g, b) {
 
 //display hsl code for color
 function displayHSL(h, s, l) {
+  //
+  console.log("This is done");
   document.querySelector("#hsl").textContent = ` ${h.toFixed(2)},  ${s.toFixed(
     2
   )}%,  ${l.toFixed(2)}%`;
